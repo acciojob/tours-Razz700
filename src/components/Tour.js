@@ -81,17 +81,17 @@ console.log(temp);
                     props.setcheck(false);
                 },1000);
             }
-            return(<li key={i}>
+            return(<li key={i} >
                 <h2>{item.name}</h2>
                 <img src={item.image}></img>
                 <h3>{item.price}</h3>
-                <p>{item.info}{!show[i] && <button onClick={()=>handlemorebutton(i)}>Show more</button>}
+                <p id={'tour-item-para-'+item.id}>{item.info}{!show[i] && <button onClick={()=>handlemorebutton(i)}>Show more</button>}
                 {show[i] && <button onClick={()=>{ handleless(i)}} >See less</button>}</p>
-                <button onClick={()=>{ handledelete(i)}}>Delete</button>
+                <button id={'delete-btn-'+item.id} onClick={()=>{ handledelete(i)}}>Delete</button>
             </li>)
         })}
         </ul>
-       {empty && <div>All travel packages are deleted  <button onClick={()=>{window.location.reload()}}>Refresh</button></div>
+       {empty && <div>No tours left <button onClick={()=>{window.location.reload()}}>Refresh</button></div>
       }
     </div>
   )
