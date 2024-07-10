@@ -86,7 +86,7 @@ console.log(temp);
                 <img src={item.image}></img>
                 <h3 className='tour-price'>{item.price}</h3>
                 <p className='tour-info' id={'tour-item-para-'+item.id}>{item.info}{!show[i] && <button id={'see-more-'+item.id} onClick={()=>handlemorebutton(i)}>See more</button>}
-                {show[i] && <button onClick={()=>{ handleless(i)}} >See less</button>}</p>
+                {show[i] && <button id={'see-less-'+item.id} onClick={()=>{ handleless(i)}} >See less</button>}</p>
                 <button id={'delete-btn-'+item.id} className='delete-btn' onClick={()=>{ handledelete(i)}}>Delete</button>
             </li>)
         })}
